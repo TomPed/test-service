@@ -1,0 +1,50 @@
+omg: 1
+
+actions:
+  exec:
+    output:
+      type: map
+    format:
+      command: ['node', 'exec.js']
+    arguments:
+      x:
+        type: int
+        required: true
+      y:
+        type: int
+        default: 0
+      z:
+        type: int
+  http:
+    output:
+      type: map
+    arguments:
+      body:
+        type: string
+        required: true
+        in: requestBody
+      path:
+        type: int
+        in: path
+        default: 2
+      query:
+        type: string
+        in: query
+    http:
+      method: post
+      port: 5000
+      path: /send/{{path}}
+
+lifecycle:
+  startup:
+    command: ['node', 'http.js']
+
+environment:
+  one:
+    type: string
+    required: true
+  two:
+    type: string
+    default: two
+  three:
+    type: string
