@@ -2,6 +2,7 @@ omg: 1
 
 actions:
   exec:
+    help: A sample action that interfaces via docker exec
     output:
       type: map
     format:
@@ -16,6 +17,7 @@ actions:
       z:
         type: int
   http:
+    help: A sample action that interfaces via HTTP
     output:
       type: map
     arguments:
@@ -33,10 +35,12 @@ actions:
     http:
       method: post
       port: 5000
-      path: /send/{{path}}
-  event:
+      path: /http/{{path}}
+  action:
+    help: A sample action that is event based
     events:
-      rename:
+      event:
+        help: Event that will stream data when its sever is it
         arguments:
           path:
             type: string
@@ -53,7 +57,7 @@ actions:
 
 lifecycle:
   startup:
-    command: ['node', 'event.js']
+    command: ['node', 'server.js']
 
 environment:
   one:
