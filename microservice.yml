@@ -34,10 +34,26 @@ actions:
       method: post
       port: 5000
       path: /send/{{path}}
+  event:
+    events:
+      rename:
+        arguments:
+          path:
+            type: string
+            in: requestBody
+        http:
+          port: 5000
+          subscribe:
+            method: post
+            path: /subscribe
+            contentType: application/json
+          unsubscribe:
+            path: /unsubscribe
+            method: delete
 
 lifecycle:
   startup:
-    command: ['node', 'http.js']
+    command: ['node', 'event.js']
 
 environment:
   one:
