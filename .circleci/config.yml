@@ -10,4 +10,4 @@ jobs:
           command: npm i omg
       - run:
           name: omg-validate
-          command: omg validate
+          command: npx omg validate
