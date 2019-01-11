@@ -13,8 +13,5 @@ jobs:
           name: omg-validate
           command: npx omg validate
       - run:
-          name: omg-build
-          command: npx omg build -t test
-      - run:
           name: omg-exec-exec
-          command: npx omg exec exec -a x=1 -a y=2 -a z=2 -e one=one -i test
+          command: npx omg exec exec -a x=1 -a y=2 -a z=2 -e one=one
