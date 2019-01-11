@@ -2,8 +2,9 @@ language: node_js
 node_js:
   - '10.13.0'
 script:
-  - npm validate
-  - omg exec exec -a x=1 -a y=2 -a z=2 -e one=one
+  - omg validate
+  - omg build -t test
+  - omg exec exec -a x=1 -a y=2 -a z=2 -e one=one - test
 before_script:
   - npm i omg
 services:
