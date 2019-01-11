@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.13.0
+    steps:
+      - checkout
+      - run:
+          name: omg-install
+          command: npm install omg -g
+      - run:
+          name: omg-validate
+          command: omg validate
