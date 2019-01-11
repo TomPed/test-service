@@ -8,7 +8,7 @@ http.createServer((req, res) => {
   req.on('data', chunk => { body += chunk.toString(); });
 
   req.on('end', () => {
-    var data = (body ? JSON.parse(body) : {});
+    const data = (body ? JSON.parse(body) : {});
 
     if (req.url === '/subscribe') {
       listeners[data.id] = {
