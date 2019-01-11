@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: omg-install
-          command: npm install omg -g
+          command: npm i omg
       - run:
           name: omg-validate
           command: omg validate
