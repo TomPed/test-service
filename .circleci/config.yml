@@ -17,4 +17,4 @@ jobs:
           command: npx omg build -t test
       - run:
           name: omg-exec-exec
-          command: npx omg exec exec -a x=1 -a y=2 -a z=2 -e one=one -t
+          command: npx omg exec exec -a x=1 -a y=2 -a z=2 -e one=one -i test
