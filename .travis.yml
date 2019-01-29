@@ -4,7 +4,7 @@ node_js:
 script:
   - omg validate
   - omg build -t test
-  - omg exec exec -a x=1 -a y=2 -a z=2 -e one=one --image test
+  - omg run exec -a x=1 -a y=2 -a z=2 -e one=one --image test
 before_script:
   - npm i omg
 services:
