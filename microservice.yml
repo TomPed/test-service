@@ -1,5 +1,10 @@
 omg: 1
 
+info:
+  version: 1.0.0
+  title: test-service
+  description: Service to help test the OMG cli.
+
 actions:
   exec:
     help: A sample action that interfaces via docker exec
