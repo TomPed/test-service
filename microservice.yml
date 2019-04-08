@@ -10,6 +10,13 @@ actions:
     help: A sample action that interfaces via docker exec
     output:
       type: map
+      properties:
+        sum:
+          type: int
+        args:
+          type: object
+        environment_variables:
+          type: object
     format:
       command: ['node', 'exec.js']
     arguments:
@@ -25,6 +32,13 @@ actions:
     help: A sample action that interfaces via HTTP
     output:
       type: map
+      properties:
+        body_data:
+          type: map
+        url_data:
+          type: string
+        environment_variables:
+          type: object
     arguments:
       body:
         type: string
@@ -40,7 +54,7 @@ actions:
     http:
       method: post
       port: 5000
-      path: /http/{{path}}
+      path: /http/{path}
   action:
     help: A sample action that is event based
     events:
@@ -48,6 +62,11 @@ actions:
         output:
           type:
             map
+          properties:
+            url_data:
+              type: int
+            environment_variables:
+              type: map
         help: Event that will stream data when its sever is it
         arguments:
           path:
